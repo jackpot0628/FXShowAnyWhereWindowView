@@ -1,0 +1,34 @@
+//
+//  PrefixHeader.pch
+//  PictureBrown
+//
+//  Created by Jackpot on 14/12/4.
+//  Copyright (c) 2014年 Jackpot. All rights reserved.
+//
+
+#ifndef PictureBrown_PrefixHeader_pch
+#define PictureBrown_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//UTF8转码
+#define UTF8(string) [string stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+//字符串对比
+#define COMPARE_STRING(A,B) [A isEqualToString:B]
+//判断字符串是否为nil
+#define JUDGE(x) (x)?x:@""
+
+
+// HUD提示显示时间
+#define HUD_SHOW_DURATION 2.1
+
+// ios 7 以下版本，y从0开始，以上版本，y从64开始
+#define VIEW_STARTPOINT_Y ([[UIDevice currentDevice].systemVersion floatValue] < 7.0 ? 0 : 64)
+
+// 判断系统和屏幕尺寸
+#define _IS_UNDER_IOS7  ([[UIDevice currentDevice].systemVersion floatValue] < 7.0 ? YES : NO)
+#define _IS_ABOVE_IOS8  ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0 ? YES : NO)
+#define _IS_SCREEN_35   ([[UIScreen mainScreen] bounds].size.height < 500 ? YES: NO)
+
+#endif
